@@ -359,7 +359,15 @@
 <!-- delay do conteudo -->
 <script type="text/javascript">
   $("#delay_content").hide(0);
-  $("#delay_content").delay(1410000).show(0); // após 23,5 minutos - alterar o número em delay para o tempo necessário, 1000 = 1 segundo
+  if (localStorage.getItem("mostra") == "sim") {
+    $("#delay_content").delay(0).show(0);
+  } else {
+    $("#delay_content").delay(1410000).show(0); // alterar o número em delay para o tempo necessário, 1000 = 1 segundo
+    localStorage.setItem("mostra", "sim");
+  }
+  
+  //$("#delay_content").hide(0);
+  //$("#delay_content").delay(1410000).show(0); // após 23,5 minutos - alterar o número em delay para o tempo necessário, 1000 = 1 segundo
 </script>
 
 
